@@ -6,6 +6,6 @@ const router = express.Router()
 // http://localhost:5000/posts
 
 router.get('/', getPost);
-router.get('/', createPost);
+router.post('/', createPost);
 
 export default router
