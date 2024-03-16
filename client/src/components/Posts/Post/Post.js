@@ -7,7 +7,7 @@ import moment from 'moment';
 
 import useStyle from './styles'
 
-const Post = ( { post } ) => {
+const Post = ({ post }) => {
   const classes = useStyle();
 
   return (
