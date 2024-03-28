@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 import useStyle from "./styles";
 import { createPost, updatePost } from "../../actions/posts";
-import { updateLocale } from "moment";
 
 const Form = ({ setCurrentId, currentId }) => {
   const [postData, setPostData] = useState({creator: "",title: "",message: "",tags: "",selectedFile: "",});
@@ -15,18 +14,18 @@ const Form = ({ setCurrentId, currentId }) => {
 
 
   useEffect(() => {
-    if(post) setPostData(post)
+    if(post) setPostData(post);
   }, [post]) 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    if(currentId){
-      dispatch(updatePost(currentId, postData));
-      clear()
-    } else {
+
+    if (currentId === 0) {
       dispatch(createPost(postData));
-      clear()
+      clear();
+    } else {
+      dispatch(updatePost(currentId, postData));
+      clear();
     }
   };
 
