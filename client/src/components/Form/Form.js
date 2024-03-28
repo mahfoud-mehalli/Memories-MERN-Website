@@ -7,7 +7,7 @@ import useStyle from "./styles";
 import { createPost, updatePost } from "../../actions/posts";
 
 const Form = ({ setCurrentId, currentId }) => {
-  const [postData, setPostData] = useState({creator: "",title: "",message: "",tags: "",selectedFile: ""});
+  const [postData, setPostData] = useState({creator: "",title: "",message: "",tags: "",selectedFile: "",});
   const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null)
   const classes = useStyle();
   const dispatch = useDispatch();
@@ -20,18 +20,17 @@ const Form = ({ setCurrentId, currentId }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (currentId === 0) {
+    if (currentId === null) {
       dispatch(createPost(postData));
-      clear();
     } else {
       dispatch(updatePost(currentId, postData));
-      clear();
     }
+    clear();
   };
 
   const clear = () => {
-    setPostData({creator: "",title: "",message: "",tags: "",selectedFile: ""})
     setCurrentId(null);
+    setPostData({creator: "",title: "",message: "",tags: "",selectedFile: "",})
   };
 
   return (
