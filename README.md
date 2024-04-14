@@ -1,7 +1,6 @@
 ﻿# Memories-MERN-Website
 
 Welcome to Memories-MERN-Website! 🎉 <br/>
-This project is your go-to space for crafting and sharing blog posts seamlessly. With 1senku1 Blog, users can express their thoughts, share experiences, and connect with others through the art of blogging. 📝✨
 
 # Features:
 <!--
@@ -31,5 +30,5 @@ This project is your go-to space for crafting and sharing blog posts seamlessly.
 ![Firebase](https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34)
 -->
 
-# 🔗 Dive In:
+# Dive In:
 Explore the Blog Platform from here: 
